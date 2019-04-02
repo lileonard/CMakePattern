@@ -13,13 +13,6 @@ IF(MPI_FLAG)
   #Makefile Link and Includes here
 ENDIF(MPI_FLAG)
 
-IF(MPI_FLAG)
-  include_directories("/home/lyh/Soft/FFTW3/include")
-  link_directories("/home/lyh/Soft/FFTW3/lib")
-  link_libraries(" -lfftw3")
-  #makefile link and includes here
-endif(MPI_FLAG)
-
 if(OMP_FLAG)
   include(./cmake/findopenmp.cmake)
   if(openmp_found)
