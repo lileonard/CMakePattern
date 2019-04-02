@@ -1,0 +1,15 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+PROJECT(CmakeTemplate)
+#SET(CMAKE_BUILD_TYPE RELEASE)
+#SET(CMAKE_BUILD_TYPE DEBUG)
+OPTION(DEBUG_FLAG "the flag of debug" ON)
+if(DEBUG_FLAG)
+  set(cmake_verbose_makefile ON)
+  add_definitions("-g -werror")
+else()
+  SET(CMAKE_VERBOSE_MAKEFILE OFF)
+  add_definitions("-o2")
+endif(DEBUG_FLAG)
+
+
+add_subdirectory(src)
